@@ -69,6 +69,14 @@ a {
   position: relative;
 }
 
+.netlify {
+  display: block;
+  margin: 0px auto;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #616161;
+}
 p {
   text-align: center;
   margin: 10px;
