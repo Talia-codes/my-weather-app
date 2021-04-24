@@ -65,11 +65,15 @@ a {
   top: -32px;
 }
 
+.weather-description {
+  text-transform: capitalize;
+}
+
 .days {
   position: relative;
 }
 
-.netlify {
+.github {
   display: block;
   margin: 0px auto;
   text-align: center;
