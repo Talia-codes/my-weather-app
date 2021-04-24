@@ -14,6 +14,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  celciusTemp = response.data.main.temp;
 }
 
 function retrievePosition(position) {
@@ -80,15 +81,25 @@ h2.innerHTML = formatDate(new Date());
 function showFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+
+  celcius.classList.remove("active");
+  fahrenheit.classList.add("active");
+
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function showCelcius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+
+  celcius.classList.add("active");
+  fahrenheit.classList.remove("active");
+
+  temperatureElement.innerHTML = Math.round(celciusTemp);
 }
+
+let celciusTemp = null;
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", showFahrenheit);

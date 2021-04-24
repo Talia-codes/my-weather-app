@@ -58,6 +58,16 @@ a {
   font-size: 70px;
 }
 
+.active {
+  color: #616161;
+  cursor: default;
+}
+
+.active:hover {
+  color: #616161;
+  text-decoration: none;
+}
+
 .degrees {
   font-size: 20px;
   text-align: center;
