@@ -23,6 +23,7 @@
   background-color: #ffffff60;
   color: #616161;
 }
+
 .fa-search {
   color: #fff;
   font-size: 30px;
@@ -77,10 +78,6 @@ a {
 
 .weather-description {
   text-transform: capitalize;
-}
-
-.days {
-  position: relative;
 }
 
 .forecast-temperature-min {
