@@ -83,6 +83,10 @@ a {
   position: relative;
 }
 
+.forecast-temperature-min {
+  color: #9c9c9c;
+}
+
 .github {
   display: block;
   margin: 0px auto;
