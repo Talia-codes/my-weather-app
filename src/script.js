@@ -1,3 +1,9 @@
+function getForecast(coordinates) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
@@ -15,6 +21,8 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celciusTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 function retrievePosition(position) {
@@ -78,7 +86,8 @@ let formattedDate = `${day} ${hours}:${minutes}`;
 let h2 = document.querySelector("#date");
 h2.innerHTML = formatDate(new Date());
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -98,6 +107,7 @@ width="30"/>
   </div>
   <div class="forecast-temperature-min">
   9°
+  </div>
   </div>
   </div>
 
@@ -137,5 +147,3 @@ let celcius = document.querySelector("#celcius-link");
 celcius.addEventListener("click", showCelcius);
 
 searchCity("Amsterdam");
-
-displayForecast();
