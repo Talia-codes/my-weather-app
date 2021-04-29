@@ -3,7 +3,7 @@
   max-width: 500px;
   margin: 30px auto;
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 .weather-app {
   padding: 35px;
@@ -19,7 +19,7 @@
   text-align: center;
   padding: 10px;
   max-width: 50px;
-  border-radius: 25px;
+  border-radius: 22px;
   background-color: #ffffff60;
   color: #616161;
 }
@@ -78,6 +78,10 @@ a {
 
 .weather-description {
   text-transform: capitalize;
+}
+
+.forecast-temperature-max {
+  font-weight: bold;
 }
 
 .forecast-temperature-min {
