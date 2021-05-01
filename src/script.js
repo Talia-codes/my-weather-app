@@ -5,7 +5,6 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${response.data.name}`;
@@ -34,12 +33,10 @@ function retrievePosition(position) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
 function getLocation() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
-
-let pin = document.querySelector("#current-location-button");
-pin.addEventListener("click", getLocation);
 
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -68,6 +65,9 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
+
+let pin = document.querySelector("#current-location-button");
+pin.addEventListener("click", getLocation);
 
 function formatDate() {
   return formattedDate;
@@ -105,7 +105,6 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-
   <div class="col d-flex justify-content-center">
   <div class="day-background1">
   <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
@@ -122,7 +121,6 @@ width="30"/>
   </div>
   </div>
   </div>
-
   `;
     }
   });
